@@ -1,0 +1,3 @@
+rootProject.name='Android_AAR_Test'
+include ':app'
+include ':glide_demo'
