@@ -1,14 +1,17 @@
 package com.fairy.glide_demo
 
+import android.content.Intent
 import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.DataSource
+import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.load.engine.GlideException
 import com.bumptech.glide.request.RequestListener
 import com.bumptech.glide.request.target.Target
+import com.fairy.glide_demo.v4.GlideV4Activity
 import com.lib.permission.Permission
 import com.lib.permission.PermissionManager
 import com.lib.permission.listener.OnPermissionListener
@@ -28,6 +31,8 @@ class MainActivity : AppCompatActivity() {
                 .load("https://cn.bing.com/az/hprichbg/rb/Dongdaemun_ZH-CN10736487148_1920x1080.jpg")
                 .placeholder(R.mipmap.ic_place_holder)//图片正在加载中的时候显示占位图
                 .error(R.mipmap.ic_error)//加载失败占位图
+                .skipMemoryCache(true)
+                .diskCacheStrategy(DiskCacheStrategy.NONE)
                 .into(image_iv)
         }
 
@@ -98,6 +103,11 @@ class MainActivity : AppCompatActivity() {
         Glide.with(this)
             .load(MyGlideUrl("https://cn.bing.com/az/hprichbg/rb/Dongdaemun_ZH-CN10736487148_1920x1080.jpg"))
             .into(image_iv)
+
+        start_activity_btn.setOnClickListener {
+            val intent = Intent(this@MainActivity, GlideV4Activity::class.java)
+            startActivity(intent)
+        }
     }
 
     private fun checkPermission() {

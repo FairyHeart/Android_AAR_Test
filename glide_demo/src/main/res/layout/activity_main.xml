@@ -46,4 +46,13 @@
         android:layout_height="wrap_content"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/listener_btn" />
+
+    <Button
+        android:id="@+id/start_activity_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="启动GlideV4Activity"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/image_iv" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
