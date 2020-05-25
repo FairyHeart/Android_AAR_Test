@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 
 import com.bumptech.glide.annotation.GlideExtension;
 import com.bumptech.glide.annotation.GlideOption;
+import com.bumptech.glide.load.DecodeFormat;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.request.BaseRequestOptions;
 import com.fairy.glide_demo.R;
@@ -38,6 +39,7 @@ public class MyAppGlideExtension {
                 .diskCacheStrategy(DiskCacheStrategy.NONE)
                 .fitCenter()
                 .override(size)
+                .format(DecodeFormat.PREFER_ARGB_8888)
                 .placeholder(R.mipmap.ic_launcher_round);
     }
 

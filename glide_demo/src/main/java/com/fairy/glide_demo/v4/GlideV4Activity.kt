@@ -7,6 +7,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.DataSource
+import com.bumptech.glide.load.DecodeFormat
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.load.engine.GlideException
 import com.bumptech.glide.request.RequestListener
@@ -29,6 +30,7 @@ class GlideV4Activity : AppCompatActivity() {
                 .error(R.mipmap.ic_error)
                 .fallback(R.mipmap.ic_launcher)
                 .skipMemoryCache(true)
+                .format(DecodeFormat.PREFER_ARGB_8888)
                 .diskCacheStrategy(DiskCacheStrategy.NONE)
 
             Glide.with(this)
@@ -42,6 +44,7 @@ class GlideV4Activity : AppCompatActivity() {
             GlideApp.with(this)
                 .load("https://cn.bing.com/az/hprichbg/rb/Dongdaemun_ZH-CN10736487148_1920x1080.jpg")
                 .noCache()
+                .format(DecodeFormat.PREFER_ARGB_8888)
                 .into(object : CustomTarget<Drawable>() {
                     override fun onLoadCleared(placeholder: Drawable?) {
                         iv_icon.setImageDrawable(placeholder)
