@@ -9,7 +9,7 @@ import com.fairy.glide_demo.R
 
 
 /**
- *
+ * 自定义API
  *
  * @author: Fairy.
  * @date  : 2020/5/24.

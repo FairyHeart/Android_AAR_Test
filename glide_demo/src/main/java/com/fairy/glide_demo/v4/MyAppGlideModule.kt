@@ -35,7 +35,6 @@ class MyAppGlideModule : AppGlideModule() {
                     1024 * 1024 * 100//缓存大小，默认250
                 )
             )//磁盘缓存
-
     }
 
     /**

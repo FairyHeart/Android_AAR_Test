@@ -1,33 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".v4.GlideV4Activity">
 
-    <ImageView
-        android:id="@+id/iv_icon"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/iv_icon2"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="wrap_content"
-        android:layout_height="200dp"
-        android:layout_marginTop="10dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/iv_icon" />
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/load_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="加载图片"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/target_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="自定义Target"
+            app:layout_constraintLeft_toRightOf="@+id/load_btn"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/view_target_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="自定义ViewTarget"
+            app:layout_constraintLeft_toRightOf="@+id/target_btn"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/preload_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="预加载图片"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/load_btn" />
+
+        <Button
+            android:id="@+id/submit_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="submit"
+            app:layout_constraintLeft_toRightOf="@+id/preload_btn"
+            app:layout_constraintTop_toTopOf="@+id/preload_btn" />
+
+        <Button
+            android:id="@+id/listener_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="listener"
+            app:layout_constraintLeft_toRightOf="@+id/submit_btn"
+            app:layout_constraintTop_toTopOf="@+id/submit_btn" />
+
+        <Button
+            android:id="@+id/trans_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="图片转换"
+            app:layout_constraintLeft_toRightOf="@+id/listener_btn"
+            app:layout_constraintTop_toTopOf="@+id/listener_btn" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <Button
         android:id="@+id/btn"
         android:layout_width="wrap_content"
-        android:layout_height="100dp"
-        android:text="load_background"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/iv_icon2" />
+        android:layout_height="wrap_content"
+        android:text="load_background" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <ImageView
+        android:id="@+id/iv_icon"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

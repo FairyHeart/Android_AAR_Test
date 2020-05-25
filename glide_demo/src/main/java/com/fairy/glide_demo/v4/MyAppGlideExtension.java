@@ -9,6 +9,8 @@ import com.bumptech.glide.request.BaseRequestOptions;
 import com.fairy.glide_demo.R;
 
 /**
+ * 自定义API
+ *
  * @author: Fairy.
  * @date : 2020/5/24.
  */
@@ -20,12 +22,22 @@ public class MyAppGlideExtension {
 
     @NonNull
     @GlideOption
-    public static BaseRequestOptions<?> initRe(BaseRequestOptions<?> options) {
+    public static BaseRequestOptions<?> noCache(BaseRequestOptions<?> options) {
+
+        return options.skipMemoryCache(true)
+                .skipMemoryCache(true)
+                .diskCacheStrategy(DiskCacheStrategy.NONE)
+                .placeholder(R.mipmap.ic_launcher_round);
+    }
+
+    @NonNull
+    @GlideOption
+    public static BaseRequestOptions<?> initRe(BaseRequestOptions<?> options, int size) {
 
         return options.skipMemoryCache(true)
                 .diskCacheStrategy(DiskCacheStrategy.NONE)
                 .fitCenter()
-                .override(500)
+                .override(size)
                 .placeholder(R.mipmap.ic_launcher_round);
     }
 
