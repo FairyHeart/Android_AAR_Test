@@ -1,4 +1,4 @@
-package com.fairy.glide_demo.v4
+package com.fairy.glide_demo.v4.okhttp
 
 import com.bumptech.glide.Priority
 import com.bumptech.glide.load.DataSource
@@ -12,7 +12,7 @@ import java.io.IOException
 import java.io.InputStream
 
 /**
- *
+ * 自定义Fetcher
  *
  * @author: Fairy.
  * @date  : 2020/5/25.

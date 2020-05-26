@@ -6,6 +6,7 @@ import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
+import com.bumptech.glide.Priority
 import com.bumptech.glide.load.DataSource
 import com.bumptech.glide.load.DecodeFormat
 import com.bumptech.glide.load.engine.DiskCacheStrategy
@@ -32,10 +33,13 @@ class GlideV4Activity : AppCompatActivity() {
                 .skipMemoryCache(true)
                 .format(DecodeFormat.PREFER_ARGB_8888)
                 .diskCacheStrategy(DiskCacheStrategy.NONE)
+                .dontAnimate()//显示图片而没有任何淡入淡出效果
+                .priority(Priority.HIGH)//图片显示优先级
 
             Glide.with(this)
                 .load("https://cn.bing.com/az/hprichbg/rb/Dongdaemun_ZH-CN10736487148_1920x1080.jpg")
                 .apply(sharedOptions)
+                .thumbnail(0.1f)//缩略图,0.1f将会显示原始图像的10%的大小
                 .into(iv_icon)
         }
 

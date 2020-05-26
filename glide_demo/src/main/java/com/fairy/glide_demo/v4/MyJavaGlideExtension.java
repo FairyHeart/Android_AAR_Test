@@ -11,14 +11,15 @@ import com.fairy.glide_demo.R;
 
 /**
  * 自定义API
+ * 官方提供了@GlideExtension的注解，使用的是静态方法实现拓展Glide的API
  *
  * @author: Fairy.
  * @date : 2020/5/24.
  */
 @GlideExtension
-public class MyAppGlideExtension {
+public class MyJavaGlideExtension {
 
-    private MyAppGlideExtension() {
+    private MyJavaGlideExtension() {
     }
 
     @NonNull
@@ -34,7 +35,6 @@ public class MyAppGlideExtension {
     @NonNull
     @GlideOption
     public static BaseRequestOptions<?> initRe(BaseRequestOptions<?> options, int size) {
-
         return options.skipMemoryCache(true)
                 .diskCacheStrategy(DiskCacheStrategy.NONE)
                 .fitCenter()

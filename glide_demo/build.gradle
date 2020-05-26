@@ -44,5 +44,7 @@ dependencies {
     implementation 'com.github.FairyHeart:LibPermission:1.0.0'
 
     implementation 'com.squareup.okhttp3:okhttp:3.9.0'
+//    implementation 'com.github.bumptech.glide:okhttp3-integration:1.5.0@aar'
+
 
 }

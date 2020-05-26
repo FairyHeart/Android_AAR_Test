@@ -7,7 +7,10 @@ import com.bumptech.glide.Registry
 import com.bumptech.glide.annotation.GlideModule
 import com.bumptech.glide.load.engine.cache.ExternalPreferredCacheDiskCacheFactory
 import com.bumptech.glide.load.engine.cache.LruResourceCache
+import com.bumptech.glide.load.model.GlideUrl
 import com.bumptech.glide.module.AppGlideModule
+import com.fairy.glide_demo.v4.okhttp.OkHttpGlideUrlLoader
+import java.io.InputStream
 
 /**
  *  自定义模块功能
@@ -42,5 +45,11 @@ class MyAppGlideModule : AppGlideModule() {
      */
     override fun registerComponents(context: Context, glide: Glide, registry: Registry) {
         super.registerComponents(context, glide, registry)
+        //使用定义的OkHttpClient替换原有的请求
+        registry.replace(
+            GlideUrl::class.java,
+            InputStream::class.java,
+            OkHttpGlideUrlLoader.Companion.Factory()
+        )
     }
 }
